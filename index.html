@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ladylukk777 - just vibing & gaming ✨🎮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #e8d5ff 50%, #d4f1f9 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Cute floating elements */
+        body::before {
+            content: '🌸 ☁️ ✨ 🎮 💖 🌙 ⭐ 🦄';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+            animation: float 20s infinite linear;
+            white-space: pre;
+            line-height: 8rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 182, 193, 0.3);
+            border-bottom: 3px solid rgba(255, 182, 193, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff69b4, #da70d6, #87ceeb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+            animation: wiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            background: linear-gradient(45deg, #ffb6c1, #dda0dd);
+            color: white;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3);
+            border: 3px solid rgba(255, 182, 193, 0.2);
+            position: relative;
+        }
+
+        .hero-content::before {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2rem;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff69b4, #da70d6, #87ceeb, #98fb98);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s ease-in-out infinite;
+        }
+
+        @keyframes rainbow {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(90deg); }
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .current-mood {
+            background: linear-gradient(45deg, #98fb98, #87ceeb);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(152, 251, 152, 0.4);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .live-status {
+            background: linear-gradient(45deg, #ff69b4, #da70d6);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4); }
+        }
+
+        .personality-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .badge {
+            background: linear-gradient(45deg, #ffb6c1, #dda0dd);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(255, 182, 193, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            text-align: left;
+            background: rgba(255, 240, 245, 0.7);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #ffb6c1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #ff69b4, #da70d6);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #ff69b4;
+            border: 2px solid #ff69b4;
+        }
+
+        .cta-secondary:hover {
+            background: #ff69b4;
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: rgba(255, 240, 245, 0.3);
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #ff69b4, #da70d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .real-talk {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            text-align: left;
+        }
+
+        .real-talk h3 {
+            color: #ff69b4;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .real-talk p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .vibes-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .vibe-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2);
+            border: 2px solid rgba(255, 182, 193, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .vibe-item:hover {
+            transform: translateY(-5px) rotate(2deg);
+        }
+
+        .vibe-item h4 {
+            color: #ff69b4;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Setup Section */
+        .setup-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(221, 160, 221, 0.1));
+        }
+
+        .setup-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ff69b4, #da70d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cozy-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
+        }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .setup-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+            border: 2px solid rgba(255, 182, 193, 0.2);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .setup-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 182, 193, 0.3);
+        }
+
+        .setup-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ff69b4;
+        }
+
+        .setup-item p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            padding: 5rem 2rem;
+            background: rgba(255, 240, 245, 0.5);
+        }
+
+        .schedule-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .schedule h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff69b4, #da70d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .schedule-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .daily-schedule {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 25px;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 40px rgba(255, 182, 193, 0.3);
+            border: 3px solid rgba(255, 182, 193, 0.2);
+        }
+
+        .daily-schedule h3 {
+            font-size: 1.8rem;
+            color: #ff69b4;
+            margin-bottom: 1.5rem;
+        }
+
+        .live-times {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .time-slot {
+            background: linear-gradient(45deg, #ffb6c1, #dda0dd);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 182, 193, 0.4);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .time-slot:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .time-slot h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-slot p {
+            opacity: 0.9;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .honest-note {
+            background: rgba(152, 251, 152, 0.2);
+            border: 2px solid rgba(152, 251, 152, 0.5);
+            padding: 1.5rem;
+            border-radius: 15px;
+            color: #333;
+            font-style: italic;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .honest-note strong {
+            color: #32cd32;
+        }
+
+        .weekly-vibes {
+            margin-top: 3rem;
+        }
+
+        .weekly-vibes h3 {
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, #ff69b4, #da70d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .vibes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .vibe-day {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2);
+            border-left: 4px solid #ffb6c1;
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .vibe-day:hover {
+            transform: translateX(5px) scale(1.02);
+            border-left-color: #ff69b4;
+        }
+
+        .day-name {
+            font-weight: bold;
+            color: #ff69b4;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-mood {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Good Vibes Section */
+        .good-vibes {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(152, 251, 152, 0.1), rgba(135, 206, 235, 0.1));
+        }
+
+        .good-vibes h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #32cd32, #87ceeb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .vibes-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .vibe-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(152, 251, 152, 0.2);
+            border: 2px solid rgba(152, 251, 152, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .vibe-card:hover {
+            transform: translateY(-5px) rotate(1deg);
+        }
+
+        .vibe-card h3 {
+            color: #32cd32;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .vibe-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #ff69b4, #da70d6);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '✨ 💖 ✨';
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            animation: sparkle 2s infinite;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1) rotate(10deg);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+            .cta-buttons { flex-direction: column; }
+            .setup-grid { grid-template-columns: 1fr; }
+            .live-times { grid-template-columns: 1fr; }
+            .vibes-grid { grid-template-columns: 1fr; }
+            .vibes-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ladylukk777 ✨</div>
+            <ul class="nav-links">
+                <li><a href="#home">home 🏠</a></li>
+                <li><a href="#about">about me 💖</a></li>
+                <li><a href="#setup">my space 🎮</a></li>
+                <li><a href="#schedule">when i'm live 📅</a></li>
+                <li><a href="#vibes">good vibes 🌸</a></li>
+                <li><a href="#contact">let's be friends 💫</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>heyyyy, it's ladylukk777! 🎮✨</h1>
+            <p class="tagline">just a girl who games too much and drinks too much coffee ☕💖</p>
+            
+            <div class="current-mood">
+                current mood: cozy chaos ✨ caffeine level: maximum ☕
+            </div>
+            
+            <div class="live-status">
+                🔴 live every day: morning coffee vibes & evening chaos! 
+            </div>
+            
+            <div class="personality-badges">
+                <span class="badge">🎮 daily streamer (somehow)</span>
+                <span class="badge">☕ coffee addict</span>
+                <span class="badge">💖 wholesome chaos energy</span>
+                <span class="badge">🌙 morning person AND night owl</span>
+                <span class="badge">🎨 indie game obsessed</span>
+                <span class="badge">🛌 streams in pajamas sometimes</span>
+            </div>
+
+            <div class="description">
+                <strong>real talk:</strong> i'm just a regular human who happens to love gaming and hanging out with cool people online! 💫
+                <br><br>
+                you'll find me here twice a day because honestly? i have no chill and i love this community too much. mornings are for cozy coffee gaming and good vibes, evenings are when the real chaos happens (and when i probably rage quit at least once) 😅
+                <br><br>
+                this is a safe space for everyone - no toxicity, no drama, just pure good vibes and probably way too many "omg did you see that?!" moments ✨
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#" class="cta-button cta-primary">come hang out! 🎮</a>
+                <a href="#" class="cta-button cta-secondary">watch me fail spectacularly! 😂</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>the real me (no filter) 💫</h2>
+            
+            <div class="real-talk">
+                <h3>🌸 honestly though...</h3>
+                <p>
+                    i'm literally just a girl who fell in love with gaming and somehow convinced people to watch me be mediocre at it twice a day 😅 
+                </p>
+                <p>
+                    some days i'm on fire, other days i can't even figure out the controls. but that's the fun part, right? we're all just figuring it out together!
+                </p>
+                <p>
+                    i started streaming because i was lonely during covid and now i have this amazing little community of weirdos (affectionate) who make my days so much brighter 💖
+                </p>
+            </div>
+
+            <div class="vibes-list">
+                <div class="vibe-item">
+                    <h4>🎮 gaming style</h4>
+                    <p>chaotic good with occasional tryhard moments</p>
+                </div>
+                <div class="vibe-item">
+                    <h4>☕ fuel of choice</h4>
+                    <p>iced coffee year-round (yes, even in winter)</p>
+                </div>
+                <div class="vibe-item">
+                    <h4>🌙 sleep schedule</h4>
+                    <p>what sleep schedule? (working on it, mom!)</p>
+                </div>
+                <div class="vibe-item">
+                    <h4>💖 love language</h4>
+                    <p>sharing memes and hyping each other up</p>
+                </div>
+                <div class="vibe-item">
+                    <h4>🎵 background music</h4>
+                    <p>lo-fi, indie, and whatever spotify thinks i need</p>
+                </div>
+                <div class="vibe-item">
+                    <h4>🍕 snack game</h4>
+                    <p>strong (probably too strong for my own good)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="setup-section" id="setup">
+        <h2>my cozy little gaming corner 🎮💖</h2>
+        
+        <div class="cozy-intro">
+            "it's not much, but it's mine and it's covered in fairy lights and probably crumbs" ✨
+        </div>
+        
+        <div class="setup-grid">
+            <div class="setup-item">
+                <h3>🌸 the aesthetic</h3>
+                <p>pink led strips everywhere, fairy lights, way too many plushies watching me game, and a chair that's seen some things (mostly me raging at ranked games)</p>
+            </div>
+            <div class="setup-item">
+                <h3>🎮 what i'm playing</h3>
+                <p>currently obsessed with stardew valley (my comfort game), trying to get better at valorant (keyword: trying), and whatever indie gem made me cry this week</p>
+            </div>
+            <div class="setup-item">
+                <h3>☕ the essentials</h3>
+                <p>giant water bottle (hydration check!), iced coffee maker that works overtime, snack drawer that's
